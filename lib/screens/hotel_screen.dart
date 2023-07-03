@@ -5,7 +5,9 @@ import 'package:traver/utils/app_layout.dart';
 import 'package:traver/utils/app_styles.dart';
 
 class HotelScreen extends StatelessWidget {
-  const HotelScreen({super.key});
+  final Map<String, dynamic> hotel;
+
+  const HotelScreen({super.key, required this.hotel});
 
   @override
   Widget build(BuildContext context) {
@@ -21,21 +23,22 @@ class HotelScreen extends StatelessWidget {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            Color.fromARGB(255, 233, 233, 233),
-            Color.fromARGB(255, 192, 192, 192),
+            Color.fromARGB(255, 181, 181, 181),
+            Color.fromARGB(255, 209, 209, 209),
+            Color.fromARGB(255, 181, 181, 181),
           ],
         )
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          HotelImage(hotelImage: "assets/images/one.png",),
+          HotelImage(hotelImage: "assets/images/${hotel['image']}",),
           SizedBox(height: 10,),
-          Text("Luxurious", style: Styles.headLineStyle2.copyWith(fontWeight: FontWeight.w900)),
+          Text(hotel['place'], style: Styles.headLineStyle2.copyWith(fontWeight: FontWeight.w900)),
           SizedBox(height: 10,),
-          Text("London", style: Styles.headLineStyle3.copyWith(fontWeight: FontWeight.w900)),
+          Text(hotel['destination'], style: Styles.headLineStyle3.copyWith(fontWeight: FontWeight.w900)),
           SizedBox(height: 10,),
-          Text("\$30/night", style: Styles.headLineStyle1.copyWith(fontWeight: FontWeight.w900)),
+          Text("\$${hotel['price'].toString()}/night", style: Styles.headLineStyle1.copyWith(color: Colors.white, fontWeight: FontWeight.w900)),
           SizedBox(height: 10,),
         ],
       ),
@@ -55,6 +58,7 @@ class HotelImage extends StatelessWidget {
       height: 180,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: Colors.white, width: 2),
         // color: Styles.primaryColor,
         image: DecorationImage(image: AssetImage(hotelImage), fit: BoxFit.cover),
         

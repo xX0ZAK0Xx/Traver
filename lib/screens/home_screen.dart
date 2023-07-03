@@ -2,6 +2,7 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:traver/screens/hotel_screen.dart';
 import 'package:traver/screens/ticket_view.dart';
+import 'package:traver/utils/app_info_list.dart';
 import 'package:traver/utils/app_styles.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -103,10 +104,7 @@ class HomeScreen extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               padding: EdgeInsets.all(16),
               child: Row(
-                children: [
-                  HotelScreen(),
-                  HotelScreen(),
-                ],
+                children: hotelList.map((hotel) => HotelScreen(hotel: hotel)).toList()
               ),
             ),
           ],
