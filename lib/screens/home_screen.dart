@@ -1,5 +1,6 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:traver/screens/hotel_screen.dart';
 import 'package:traver/screens/ticket_view.dart';
 import 'package:traver/utils/app_styles.dart';
 
@@ -13,6 +14,7 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: ListView(
           children: [
+            // Title, logo, search bar, and upcoming flights title
             Container(
               padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               child: Column(
@@ -69,6 +71,8 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
+            
+            //Tickets
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
@@ -78,6 +82,8 @@ class HomeScreen extends StatelessWidget {
                 ],
               )
             ),
+
+            // Hotel Titlebar
             Container(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Row(
@@ -87,6 +93,19 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Text("Hotels", style: Styles.headLineStyle1),
                   Text("View all", style: Styles.textStyle.copyWith(color: Styles.blueColor),),
+                ],
+              ),
+            ),
+            SizedBox(height: 25,),
+
+            //Hotel area
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              padding: EdgeInsets.all(16),
+              child: Row(
+                children: [
+                  HotelScreen(),
+                  HotelScreen(),
                 ],
               ),
             ),
