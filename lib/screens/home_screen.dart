@@ -63,9 +63,9 @@ class HomeScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.baseline,
                     children: [
                       Text("Upcoming flights", style: Styles.headLineStyle1),
-                      Text("View all", style: Styles.textStyle.copyWith(color: Styles.primaryColor),),
+                      Text("View all", style: Styles.textStyle.copyWith(color: Styles.blueColor),),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
@@ -77,7 +77,18 @@ class HomeScreen extends StatelessWidget {
                   TicketView(),
                 ],
               )
-              
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                textBaseline: TextBaseline.alphabetic,
+                crossAxisAlignment: CrossAxisAlignment.baseline,
+                children: [
+                  Text("Hotels", style: Styles.headLineStyle1),
+                  Text("View all", style: Styles.textStyle.copyWith(color: Styles.blueColor),),
+                ],
+              ),
             ),
           ],
         ),

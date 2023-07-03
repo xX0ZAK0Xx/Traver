@@ -14,7 +14,7 @@ class TicketView extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(boxShadow: [
           BoxShadow(
-            color: Color.fromARGB(255, 174, 174, 174).withOpacity(0.5),
+            color: Color.fromARGB(255, 198, 198, 198).withOpacity(0.3),
             spreadRadius: 0,
             blurRadius: 20,
             offset: Offset(0, 0), // changes position of shadow
