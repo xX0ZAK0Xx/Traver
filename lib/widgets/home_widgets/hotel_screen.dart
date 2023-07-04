@@ -37,7 +37,7 @@ class HotelScreen extends StatelessWidget {
           Text(hotel['place'], style: Styles.headLineStyle2.copyWith(fontWeight: FontWeight.w900)),
           SizedBox(height: 10,),
           Text(hotel['destination'], style: Styles.headLineStyle3.copyWith(fontWeight: FontWeight.w900)),
-          SizedBox(height: 20,),
+          SizedBox(height: 5,),
           Text("\$${hotel['price'].toString()}/night", style: Styles.headLineStyle1.copyWith(color: Colors.white, fontWeight: FontWeight.w900)),
           SizedBox(height: 10,),
         ],

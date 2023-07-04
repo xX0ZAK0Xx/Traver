@@ -1,9 +1,11 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:traver/screens/hotel_screen.dart';
-import 'package:traver/screens/ticket_view.dart';
+import 'package:traver/widgets/home_widgets/hotel_screen.dart';
+import 'package:traver/widgets/home_widgets/ticket_view.dart';
 import 'package:traver/utils/app_info_list.dart';
 import 'package:traver/utils/app_styles.dart';
+
+import '../widgets/two_text.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -60,15 +62,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 30,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    textBaseline: TextBaseline.alphabetic,
-                    crossAxisAlignment: CrossAxisAlignment.baseline,
-                    children: [
-                      Text("Upcoming flights", style: Styles.headLineStyle1),
-                      Text("View all", style: Styles.textStyle.copyWith(color: Styles.blueColor),),
-                    ],
-                  ),
+                  TwoTextHeader(bigText: "Upcoming Flights", smallText: "View all"),
                 ],
               ),
             ),
@@ -83,18 +77,9 @@ class HomeScreen extends StatelessWidget {
 
             // Hotel Titlebar
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                textBaseline: TextBaseline.alphabetic,
-                crossAxisAlignment: CrossAxisAlignment.baseline,
-                children: [
-                  Text("Hotels", style: Styles.headLineStyle1),
-                  Text("View all", style: Styles.textStyle.copyWith(color: Styles.blueColor),),
-                ],
-              ),
+              padding: EdgeInsets.all(16),
+              child: TwoTextHeader(bigText: "Hotels", smallText: "View all",)
             ),
-            SizedBox(height: 25,),
 
             //Hotel area
             SingleChildScrollView(
@@ -110,3 +95,4 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
