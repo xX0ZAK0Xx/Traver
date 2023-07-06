@@ -6,6 +6,7 @@ import 'package:traver/utils/app_layout.dart';
 import 'package:traver/widgets/search_widget/icon_text.dart';
 import 'package:traver/utils/app_styles.dart';
 
+import '../widgets/tab_selector.dart';
 import '../widgets/two_text.dart';
 
 class SearchScreen extends StatelessWidget {
@@ -22,7 +23,7 @@ class SearchScreen extends StatelessWidget {
           children: [
             Text("What are\nYou looking for?", style: Styles.headLineStyle1.copyWith(fontSize: 30),),
             SizedBox(height: 20,),
-            Selector(),
+            Selector(tab1: "Air Tickets", tab2: "Hotels",),
             SizedBox(height: 20,),
 
             AppIconText(icon: Icons.flight_takeoff, text: "Departure",),
@@ -30,20 +31,29 @@ class SearchScreen extends StatelessWidget {
             AppIconText(icon: Icons.flight_land, text: "Arrival",),
             SizedBox(height: 20,),
 
-            InkWell(
-              onTap: () {},
-              child: Expanded(
-                child: Container(
-                  padding: EdgeInsets.all(18),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color:Styles.primaryColor,
+            Flex(
+              direction: Axis.vertical,
+              children: [
+                Listener(
+                  child: InkWell(
+                    onTap: () {},
+                    child: Container(
+                      padding: EdgeInsets.all(18),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Styles.primaryColor,
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Search Flights",
+                          style: Styles.headLineStyle2.copyWith(color: Colors.white),
+                        ),
+                      ),
+                    ),
                   ),
-                  child: Center(child: Text("Search Flights", style: Styles.headLineStyle2.copyWith(color: Colors.white),)),
                 ),
-              ), 
+              ],
             ),
-
             SizedBox(height: 25,),
             TwoTextHeader(bigText: "Upcoming Flights", smallText: "View all"),
 
@@ -145,71 +155,6 @@ class SearchScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-
-
-class Selector extends StatefulWidget {
-  const Selector({
-    super.key,
-  });
-
-  @override
-  State<Selector> createState() => _SelectorState();
-}
-
-class _SelectorState extends State<Selector> {
-  Color firstInkwellColor = Color.fromARGB(255, 255, 255, 255);
-  Color secondInkwellColor = Color.fromARGB(255, 230, 239, 255);
-
-  void exchangeColors() {
-    setState(() {
-      Color tempColor = firstInkwellColor;
-      firstInkwellColor = secondInkwellColor;
-      secondInkwellColor = tempColor;
-    });
-  }
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Color.fromARGB(255, 206, 206, 206),
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            child: InkWell(
-              onTap: exchangeColors,
-              child: Container(
-                padding: EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: firstInkwellColor,
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(20), bottomLeft: Radius.circular(20), bottomRight: Radius.circular(5), topRight: Radius.circular(5)),
-                ),
-                child: Center(child: Text("Air Tickets", style: Styles.headLineStyle2.copyWith(color: const Color.fromARGB(221, 60, 60, 60)),)),
-              ),
-            ),
-          ),
-          Expanded(
-            child: InkWell(
-              onTap: exchangeColors,
-              child: Container(
-                padding: EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: secondInkwellColor,
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(5), bottomLeft: Radius.circular(5), bottomRight: Radius.circular(20), topRight: Radius.circular(20)),
-                ),
-                child: Center(child: Text("Hotels", style: Styles.headLineStyle2.copyWith(color: const Color.fromARGB(221, 60, 60, 60),)
-                ),
-              ),)
-            ),
-          ),
-        ],
-      ),
-      
     );
   }
 }
