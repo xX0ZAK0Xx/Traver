@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 
 import '../utils/app_styles.dart';
 
-class Selector extends StatefulWidget {
+class TabSelector extends StatefulWidget {
   final String tab1, tab2;
   
-  const Selector({
+  const TabSelector({
     super.key, required this.tab1, required this.tab2,
   });
 
   @override
-  State<Selector> createState() => _SelectorState();
+  State<TabSelector> createState() => _TabSelectorState();
 }
 
-class _SelectorState extends State<Selector> {
+class _TabSelectorState extends State<TabSelector> {
   Color firstInkwellColor = Color.fromARGB(255, 255, 255, 255);
   Color secondInkwellColor = Color.fromARGB(255, 230, 239, 255);
 

@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:traver/screens/home_screen.dart';
 import 'package:traver/screens/search_screen.dart';
+import 'package:traver/screens/ticket_screen.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
@@ -12,11 +13,11 @@ class BottomBar extends StatefulWidget {
 }
 
 class _BottomBarState extends State<BottomBar> {
-  int _selectedIndex = 1;
+  int _selectedIndex = 2;
   static final List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     SearchScreen(),
-    const Text("Tickets"),
+    TicketScreen(),
     const Text("Profile"),
   ];
   void _onItemTap(index) => setState(() {

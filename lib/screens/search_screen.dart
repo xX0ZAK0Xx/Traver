@@ -23,7 +23,7 @@ class SearchScreen extends StatelessWidget {
           children: [
             Text("What are\nYou looking for?", style: Styles.headLineStyle1.copyWith(fontSize: 30),),
             SizedBox(height: 20,),
-            Selector(tab1: "Air Tickets", tab2: "Hotels",),
+            TabSelector(tab1: "Air Tickets", tab2: "Hotels",),
             SizedBox(height: 20,),
 
             AppIconText(icon: Icons.flight_takeoff, text: "Departure",),
